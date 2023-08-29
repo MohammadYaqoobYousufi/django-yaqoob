@@ -4,7 +4,13 @@
     {% block title %}
     django_firstproject_yaqoob - List of all members
     {% endblock %}
-  
+    
+    <form action="/members/" method="post">
+      {% csrf_token %}
+      {{ form }}
+      <input type="submit">
+    </form>
+
   
   {% block content %}
     <h1>Members</h1>
