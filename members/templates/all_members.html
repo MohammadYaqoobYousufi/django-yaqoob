@@ -5,22 +5,23 @@
     django_firstproject_yaqoob - List of all members
     {% endblock %}
     
+    {% block content %}
+
     <form action="/members/" method="post">
       {% csrf_token %}
       {{ form }}
       <input type="submit">
     </form>
 
-  
-  {% block content %}
+
     <h1>Members</h1>
     
     <ul>
       {% for x in mymembers %}
-        <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a><input type="button" value="view"></li>
+        <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}  </a><input type="button" value="view"></li>
       {% endfor %}
     </ul>
-  {% endblock %}
-
+    
     <img src="{% static 'images/dushanbe-with-presidential.jpg' %}" alt="" />
   
+    {% endblock %}
